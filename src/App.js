@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-
+    <h1> Sup! </h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit" >Search</button>
