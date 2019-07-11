@@ -7,7 +7,7 @@ import Article from './Article';
 
 function App() {
 
-  const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY);
+  const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY || "REACT_APP_NEWS_API_KEY");
 
   const [articles, setArticles] = useState([]);
   const [search, setSearch] = useState('');
