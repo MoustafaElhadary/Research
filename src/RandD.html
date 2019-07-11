@@ -1,0 +1,35 @@
+<html><head>
+<script src="//api.rocketreach.co/v1/api.min.js"></script>
+<script>
+    var API_KEY = "3E7k0123456789abcdef0123456789abcdef";
+
+    //RocketReach has initialized
+    var doLookup = function (account) {
+        //Lookup Profile
+        RocketReachAPI.lookupProfile({
+            name: "Marc Benioff",
+            current_employer: "Salesforce"
+        }).then(function (profiles) {
+            //Print Result
+            document.getElementById("output").innerHTML += JSON.stringify(profiles[0],null,4);
+        },handleFailure);
+    }
+
+    //Generic function to handle failure.
+    var handleFailure = function () {
+        console.error("Error:", arguments);
+    }
+
+    //Initialise
+    RocketReachAPI.init({
+        "api_key":API_KEY,
+        "success":doLookup,
+        "error": handleFailure
+    });
+</script>
+</head>
+<body>
+<h1>Call RocketReachAPI.lookupProfile()</h1>  
+<pre id="output"></pre>  
+</body>
+</html>

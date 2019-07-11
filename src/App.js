@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import CardDeck from 'react-bootstrap/CardDeck';
 import './App.css';
 import NewsAPI from 'newsapi';
 import Article from './Article';
@@ -38,13 +39,16 @@ function App() {
 
   return (
     <div className="App">
-    <h1> Welcome to the KnowledgeBase! </h1>
+    <h1> Welcome to the Company Article Knowledge Base! </h1>
+    <h4> Search below for any comapny and get articles on them </h4>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" value={search} onChange={updateSearch} />
         <Button className="search-button" type="submit" >Search</Button>
       </form>
-      {articles.map(article => (
-        <Article
+      <div className="row justify-content-center"> 
+
+        {articles.map(article => (
+        <Article 
           key={article.title}
           title={article.title}
           author={article.author}
@@ -54,6 +58,9 @@ function App() {
           url={article.url}
         />
       ))}
+      </div>
+        
+      
     </div>
   );
 }
