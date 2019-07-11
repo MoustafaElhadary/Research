@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Button from 'react-bootstrap/Button';
 import './App.css';
 import NewsAPI from 'newsapi';
 import Article from './Article';
@@ -41,7 +41,7 @@ function App() {
     <h1> Welcome to the KnowledgeBase! </h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" value={search} onChange={updateSearch} />
-        <button className="search-button" type="submit" >Search</button>
+        <Button className="search-button" type="submit" >Search</Button>
       </form>
       {articles.map(article => (
         <Article
