@@ -17,6 +17,7 @@ const Article = ({ title, author, source, image, content, url }) => {
                     </footer>
                     <Button variant="primary"><a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white' }}> go to article</a></Button>
                 </Card.Body>
+                {/* <Card.footer>{date}</Card.footer> */}
             </Card>
         </div>
 

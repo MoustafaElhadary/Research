@@ -22,6 +22,8 @@ function App() {
     newsapi.v2.everything({
       q: query,
       sortBy: 'relevancy',
+      pageSize:50,
+      page:1
     }).then(response => {
       setArticles(response.articles);
     });
