@@ -21,7 +21,7 @@ function App() {
   const getNews = () => {
     newsapi.v2.everything({
       q: query,
-      sortBy: 'popularity',
+      sortBy: 'relevancy',
       pageSize:100,
       page:1,
       language:'en'
@@ -55,7 +55,7 @@ function App() {
           key={article.title}
           title={article.title}
           author={article.author}
-          content={article.content}
+          content={article.description}
           image={article.urlToImage}
           source={article.source.name}
           url={article.url}
