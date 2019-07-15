@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import CardDeck from 'react-bootstrap/CardDeck';
 import './App.css';
 import NewsAPI from 'newsapi';
+import Snovio from 'snovio';
 import Article from './Article';
-
+import logo from './Logo.png' ;
 
 function App() {
 
   const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY || "REACT_APP_NEWS_API_KEY");
+  const snovio = Snovio(process.env.REACT_APP_SNOVIO_UID || "REACT_APP_SNOVIO_UID", process.env.REACT_APP_SNOVIO_SECRET || "REACT_APP_SNOVIO_SECRET")
 
   const [articles, setArticles] = useState([]);
   const [search, setSearch] = useState('');
@@ -42,6 +44,7 @@ function App() {
 
   return (
     <div className="App">
+    <img src={logo} height="50" className="justify-content-left" ></img>
     <h1> Welcome to the Company Article Knowledge Base! </h1>
     <h4> Search below for any comapny and get articles on them </h4>
       <form onSubmit={getSearch} className="search-form">
