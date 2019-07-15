@@ -21,9 +21,10 @@ function App() {
   const getNews = () => {
     newsapi.v2.everything({
       q: query,
-      sortBy: 'relevancy',
-      pageSize:50,
-      page:1
+      sortBy: 'popularity',
+      pageSize:100,
+      page:1,
+      language:'en'
     }).then(response => {
       setArticles(response.articles);
     });
@@ -58,6 +59,7 @@ function App() {
           image={article.urlToImage}
           source={article.source.name}
           url={article.url}
+          publishedAt={article.publishedAt}
         />
       ))}
       </div>
