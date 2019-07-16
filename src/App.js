@@ -33,24 +33,23 @@ function App() {
       pageSize: 100,
     }).then(response => {
 
-      var articles = response.articles.filter(article => article.title.toLowerCase().includes("wework") && article.author !=null).map(function (article) {
+      var articles = response.articles.filter(article => article.title.toLowerCase().includes("wework") && article.author != null).map(function (article) {
 
         const parsed = human.parseName(article.author != null ? article.author : '');
         const domain = extractDomain(article.url);
-        const contact = contacts.find(contact =>  article.author.includes(contact.Name));
+        const contact = contacts.find(contact => article.author.includes(contact.Name));
 
-        const result = {
+        return {
           ...article,
           "paper": article.source.name,
           "domain": domain,
-          "firstName": parsed.firstName, 
-          "lastName": parsed.lastName, 
-          "email": contact != null ? contact.Email : "", 
+          "firstName": parsed.firstName,
+          "lastName": parsed.lastName,
+          "email": contact != null ? contact.Email : "",
           "twitter": contact != null ? contact.Twitter : ""
-        };
-        return result;
+        }
       });
-
+      console.log(articles);
       setArticles(articles);
     });
   }
@@ -68,30 +67,31 @@ function App() {
   return (
     <div className="App">
       <img src={logo} height="50" className="justify-content-left" ></img>
-      <h1> Welcome to the Company Article Knowledge Base! </h1>
-      <h4> Search below for any comapny and get articles on them </h4>
+      <h1> Company Article Knowledge Base</h1>
       <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" value={search} onChange={updateSearch} />
+        <input className="search-bar shadow-lg rounded" value={search} onChange={updateSearch} />
         <Button className="search-button" type="submit" >Search</Button>
       </form>
-      <div className="row justify-content-center">
 
-        {articles.map(article => (
-          <Article
-            title={article.title}
-            author={article.author}
-            content={article.description}
-            image={article.urlToImage}
-            source={article.source.name}
-            url={article.url}
-            publishedAt={article.publishedAt}
-            email={article.email}
-            twitter={article.twitter}
-          />
-        ))}
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            {articles.map(article => (
+              <Article
+                title={article.title}
+                author={article.author}
+                content={article.description}
+                image={article.urlToImage}
+                source={article.source.name}
+                url={article.url}
+                publishedAt={article.publishedAt}
+                email={article.email}
+                twitter={article.twitter}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-
-
     </div>
   );
 }
