@@ -12,17 +12,20 @@ import jsonResponse from './DB/Db';
 function App() {
 
   const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY || "REACT_APP_NEWS_API_KEY");
+  const WEWORK = "wework";
 
   // const snovio = Snovio(process.env.REACT_APP_SNOVIO_UID || "REACT_APP_SNOVIO_UID", process.env.REACT_APP_SNOVIO_SECRET || "REACT_APP_SNOVIO_SECRET");
   // const human = require('humanparser');
 
   const contacts = [...jsonResponse];
 
+  const emails = contacts.map(contact => contact.Email).join(";");
+
   //DEclaring states and intializing them
   const [articles, setArticles] = useState([]);
   const [total, setTotal] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('WeWork');
+  const [query, setQuery] = useState(WEWORK);
 
   useEffect(() => {
     getNews();
@@ -36,14 +39,13 @@ function App() {
       pageSize: 100,
     }).then(response => {
 
-      var articles = response.articles.filter(article => article.title.toLowerCase().includes(search) && article.author != null).map(function (article) {
-
+      var articles = response.articles.filter(article => article.author != null && article.title.toLowerCase().includes(query)).map(function (article) {
         //TODO: This will be implemented later when searching by author is implemented
         // const parsed = human.parseName(article.author != null ? article.author : '');
         // const domain = extractDomain(article.url);
 
         const contact = contacts.find(contact => article.author.includes(contact.Name));
-
+        console.log(contact);
         return {
           ...article,
           "paper": article.source.name,
@@ -56,9 +58,10 @@ function App() {
       });
       console.log(articles);
       setArticles(articles);
-      setTotal([response.totalResults,contacts.length]);
+      setTotal([response.totalResults, contacts.length]);
     });
   }
+
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -73,46 +76,50 @@ function App() {
   return (
     <div className="App">
       <div className="container sticky-top">
-        <div className="row bg-white pb-3 pt-3">
+        <div className="row bg-white pb-10 pt-10">
           <div className="col-6 ">
-            <img src={logo} height="20" className="justify-content-left img-fluid" />
+            <img src={logo} height="20" className="App-img img-fluid" />
           </div>
-          <div className="col justify-content-right">
-            <div className="row">
+          <div className="col justify-content-right app-txt">
+            <div className="row  pt-10">
               <span>{total[0]} articles on {query}</span>
             </div>
             <div className="row">
-              <span>{total[1] * 4} articles on {query}</span>
+              <span>{total[1] * 4} emails for authors that wrote about {query}</span>
             </div>
           </div>
         </div>
       </div>
 
 
-      <h1 style={{fontSize:"5vw"}}> Company Article Knowledge Base</h1>
+      <span style={{ fontSize: "3vw" }}> Company Article Knowledge Base</span>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar shadow-lg rounded" value={search} onChange={updateSearch} />
         <Button className="search-button rounded" type="submit" >Search</Button>
+        <Button className="search-button ml-6 rounded" ><a href={`mailto:` + emails} style={{ textDecoration: 'none', color: 'white' }}>Mass Email</a></Button>
       </form>
 
-      <div className="container">
+      {/* <div className="container">
         <div>
           <div className="container">
-            {articles.map(article => (
-              <Article
-                title={article.title}
-                author={article.author}
-                content={article.description}
-                image={article.urlToImage}
-                source={article.source.name}
-                url={article.url}
-                publishedAt={article.publishedAt}
-                email={article.email}
-                twitter={article.twitter}
-              />
-            ))}
+            
           </div>
         </div>
+      </div> */}
+      <div className="card-deck">
+        {articles.map(article => (
+          <Article
+            title={article.title}
+            author={article.author}
+            content={article.description}
+            image={article.urlToImage}
+            source={article.source.name}
+            url={article.url}
+            publishedAt={article.publishedAt}
+            email={article.email}
+            twitter={article.twitter}
+          />
+        ))}
       </div>
     </div>
   );
