@@ -13,12 +13,12 @@ const Article = ({ title, author, source, image, content, url, publishedAt, twit
     }catch(err){
     }
     return (
-        <div class="col-sm ">
+        <div className="col-sm ">
             <Card border="info" style={{margin: '2em' }} className="shadow-lg rounded pb-5">
-                <Card.Header>{title}</Card.Header>
-                <Card.Img variant="top" src={image} alt="" width="300vh" />
-                <Card.Body>
-                    <Card.Text>{content}</Card.Text>{author}
+                <Card.Header  style={{fontSize:"4vw"}}>{title}</Card.Header>
+                <Card.Img variant="top" src={image} alt="" width="40vw" className="img-fluid" />
+                <Card.Body  style={{fontSize:"3vw"}}>
+                    <Card.Text >{content}</Card.Text>{author}
                     <footer className="blockquote-footer"> <cite title="Source Title"> {source} / {date} </cite>
                     </footer>
                     <Button variant="primary"><a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white' }}> go to article</a></Button>

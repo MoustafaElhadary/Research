@@ -72,16 +72,16 @@ function App() {
 
   return (
     <div className="App">
-      <div class="container sticky-top">
-        <div class="row bg-white pb-3 pt-3">
-          <div class="col-6 ">
-            <img src={logo} height="50" className="justify-content-left" />
+      <div className="container sticky-top">
+        <div className="row bg-white pb-3 pt-3">
+          <div className="col-6 ">
+            <img src={logo} height="20" className="justify-content-left img-fluid" />
           </div>
-          <div class="col justify-content-right">
-            <div class="row">
+          <div className="col justify-content-right">
+            <div className="row">
               <span>{total[0]} articles on {query}</span>
             </div>
-            <div class="row">
+            <div className="row">
               <span>{total[1] * 4} articles on {query}</span>
             </div>
           </div>
@@ -89,15 +89,15 @@ function App() {
       </div>
 
 
-      <h1> Company Article Knowledge Base</h1>
+      <h1 style={{fontSize:"5vw"}}> Company Article Knowledge Base</h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar shadow-lg rounded" value={search} onChange={updateSearch} />
         <Button className="search-button rounded" type="submit" >Search</Button>
       </form>
 
-      <div class="container">
-        <div class="row">
-          <div>
+      <div className="container">
+        <div>
+          <div className="container">
             {articles.map(article => (
               <Article
                 title={article.title}
