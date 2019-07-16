@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button';
 import dateFormat from 'dateformat';
 
 
-const Article = ({ title, author, source, image, content, url, publishedAt }) => {
+const Article = ({ title, author, source, image, content, url, publishedAt, twitter, email }) => {
+
+    
     var date ;
     try {
         date = dateFormat(publishedAt, "longDate")
@@ -21,7 +23,7 @@ const Article = ({ title, author, source, image, content, url, publishedAt }) =>
                     <footer className="blockquote-footer"> <cite title="Source Title"> {source} / {date} </cite>
                     </footer>
                     <Button variant="primary"><a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white' }}> go to article</a></Button>
-                    
+                    {twitter} {email}
                 </Card.Body>
             </Card>
         </div>
