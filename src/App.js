@@ -45,7 +45,7 @@ function App() {
           "firstName": parsed.firstName, 
           "lastName": parsed.lastName, 
           "email": contact != null ? contact.Email : "", 
-          "twitter": contact != null ? contact.Twittter : ""
+          "twitter": contact != null ? contact.Twitter : ""
         };
         return result;
       });

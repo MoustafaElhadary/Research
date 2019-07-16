@@ -3,230 +3,230 @@ const jsonResponse = [
       "Name": "Lauren Silva Laughlin",
       "Company": "The Wall Street Journal",
       "Email": "lauren.silvalaughlin@wsj.com",
-      "Twittter": "TheRealLSL"
+      "Twitter": "TheRealLSL"
     },
     {
       "Name": "Natalie Wong",
       "Company": "Bloomberg",
       "Email": "nwong133@bloomberg.net",
-      "Twittter": "natalexisw",
+      "Twitter": "natalexisw",
       
     },
     {
       "Name": "Michael Neibauer",
       "Company": "Washington Business Journal",
       "Email": "mneibauer@bizjournals.com",
-      "Twittter": "WBJNeibs",
+      "Twitter": "WBJNeibs",
       
     },
     {
       "Name": "Catherine Carlock",
       "Company": "Boston Business Journal",
       "Email": "ccarlock@bizjournals.com",
-      "Twittter": "BosBizCatherine",
+      "Twitter": "BosBizCatherine",
       
     },
     {
       "Name": "Lisa Burden",
       "Company": "HR Drive",
       "Email": "hr.dive.editors@industrydive.com",
-      "Twittter": "N/A",
+      "Twitter": "N/A",
       
     },
     {
       "Name": "Tom McParland",
       "Company": "Law.Com",
       "Email": "tmcparland@alm.com",
-      "Twittter": "N/A",
+      "Twitter": "N/A",
       
     },
     {
       "Name": "Ryan Ori",
       "Company": "Chicago Tribune",
       "Email": "rori@chicagotribune.com",
-      "Twittter": "Ryan_Ori",
+      "Twitter": "Ryan_Ori",
       
     },
     {
       "Name": "Sara Ashely O’brien",
       "Company": "CNN Business",
       "Email": "sara.obrien@cnn.com",
-      "Twittter": "saraashleyo",
+      "Twitter": "saraashleyo",
       
     },
     {
       "Name": "Akin Oyedele",
       "Company": "Business Insider",
       "Email": "aoyedele@businessinsider.com",
-      "Twittter": "AkinOyedele",
+      "Twitter": "AkinOyedele",
       
     },
     {
       "Name": "Anne Sraders",
       "Company": "Fortune",
       "Email": "anne.sraders@fortune.com",
-      "Twittter": "AnneSraders",
+      "Twitter": "AnneSraders",
       
     },
     {
       "Name": "Steve Brown",
       "Company": "Dallas News",
       "Email": "stevebrown@dallasnews.com",
-      "Twittter": "SteveBrownDMN",
+      "Twitter": "SteveBrownDMN",
       
     },
     {
       "Name": "Alex Wilhelm",
       "Company": "Crunchbase News",
       "Email": "alex@crunchbase.com",
-      "Twittter": "alex",
+      "Twitter": "alex",
       
     },
     {
       "Name": "Joshua Franklin",
       "Company": "Reuters",
       "Email": "joshua.franklin@thomsonreuters.com",
-      "Twittter": "ReutersJF",
+      "Twitter": "ReutersJF",
       
     },
     {
       "Name": "Art Raymond",
       "Company": "Deseret News Utah",
       "Email": "araymond@desnews.com",
-      "Twittter": "DNTechHive",
+      "Twitter": "DNTechHive",
       
     },
     {
       "Name": "Alex Konrad",
       "Company": "Forbes",
       "Email": "akonrad@forbes.com",
-      "Twittter": "alexrkonrad",
+      "Twitter": "alexrkonrad",
       
     },
     {
       "Name": "Jamie Powell",
       "Company": "Financial Times",
       "Email": "jamie.powell@ft.com",
-      "Twittter": "ajb_powell",
+      "Twitter": "ajb_powell",
       
     },
     {
       "Name": "Michael J. de la Merced",
       "Company": "New York Times",
       "Email": "delamerced@protonmail.com",
-      "Twittter": "m_delamerced",
+      "Twitter": "m_delamerced",
       
     },
     {
       "Name": "Margret Jackson",
       "Company": "BISNOW",
       "Email": "margaret.jackson@bisnow.com",
-      "Twittter": "DenverMargaret",
+      "Twitter": "DenverMargaret",
       
     },
     {
       "Name": "Lionel Laurent",
       "Company": "Yahoo Finance",
       "Email": "llaurent2@bloomberg.net",
-      "Twittter": "LionelRALaurent",
+      "Twitter": "LionelRALaurent",
       
     },
     {
       "Name": "Reeves Wiedeman",
       "Company": "Intelligencer",
       "Email": "reeves.wiedeman@gmail.com",
-      "Twittter": "reeveswiedeman",
+      "Twitter": "reeveswiedeman",
       
     },
     {
       "Name": "Stephen Bronner",
       "Company": "Entrepreneur",
       "Email": "sbronner@entrepreneur.com",
-      "Twittter": "StephenJBronner",
+      "Twitter": "StephenJBronner",
       
     },
     {
       "Name": "Ellen Huet",
       "Company": "Bloomberg Business",
       "Email": "ehuet4@bloomberg.net",
-      "Twittter": "ellenhuet",
+      "Twitter": "ellenhuet",
       
     },
     {
       "Name": "Maureen Farrell",
       "Company": "MarketWatch",
       "Email": "mfarrell@forbes.com",
-      "Twittter": "maureenmfarrell",
+      "Twitter": "maureenmfarrell",
       
     },
     {
       "Name": "Catherine Shu",
       "Company": "TechCrunch",
       "Email": "shu@techcrunch.com",
-      "Twittter": "catherineshu",
+      "Twitter": "catherineshu",
       
     },
     {
       "Name": "Kirsten Korosec",
       "Company": "TechCrunch",
       "Email": "k.korosec@techcrunch.com",
-      "Twittter": "kirstenkorosec",
+      "Twitter": "kirstenkorosec",
       
     },
     {
       "Name": "Rebecca Aydin",
       "Company": "Business Insider",
       "Email": "raydin@businessinsider.com",
-      "Twittter": "RebeccaAydin",
+      "Twitter": "RebeccaAydin",
       
     },
     {
       "Name": "Joshua Franklin",
       "Company": "Reuters",
       "Email": "joshua.franklin@thomsonreuters.com",
-      "Twittter": "ReutersJF",
+      "Twitter": "ReutersJF",
       
     },
     {
       "Name": "Michael Grothaus",
       "Company": "Fastcompany.com",
       "Email": "mgrothaus@fastcompany.com",
-      "Twittter": "michaelgrothaus",
+      "Twitter": "michaelgrothaus",
       
     },
     {
       "Name": "Danny Crichton",
       "Company": "TechCrunch",
       "Email": "danny@techcrunch.com",
-      "Twittter": "DannyCrichton",
+      "Twitter": "DannyCrichton",
       
     },
     {
       "Name": "Neil Devani",
       "Company": "TechCrunch",
       "Email": "neil@techcrunch.com",
-      "Twittter": "neildevani",
+      "Twitter": "neildevani",
       
     },
     {
       "Name": "Tom Goodwin",
       "Company": "The Next Web",
       "Email": "tomfgoodwin@thenextweb.com",
-      "Twittter": "tomfgoodwin",
+      "Twitter": "tomfgoodwin",
       
     },
     {
       "Name": "Julie Bort",
       "Company": "Business Insider",
       "Email": "jbort@businessinsider.com",
-      "Twittter": "Julie188",
+      "Twitter": "Julie188",
       
     },
     {
       "Name": "Arman Tabatabai",
       "Company": "TechCrunch",
       "Email": "arman.tabatabai@techcrunch.com",
-      "Twittter": "armantabatabai",
+      "Twitter": "armantabatabai",
     }
   ];
 
