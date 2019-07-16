@@ -19,7 +19,7 @@ function App() {
 
   const contacts = [...jsonResponse];
 
-  const emails = contacts.map(contact => contact.Email).join(";");
+  const emails = contacts.map(contact => contact.Email).join("; ");
 
   //DEclaring states and intializing them
   const [articles, setArticles] = useState([]);
@@ -85,7 +85,7 @@ function App() {
               <span>{total[0]} articles on {query}</span>
             </div>
             <div className="row">
-              <span>{total[1] * 4} emails for authors that wrote about {query}</span>
+              <span>{total[1] * 2} emails for authors that wrote about {query}</span>
             </div>
           </div>
         </div>
