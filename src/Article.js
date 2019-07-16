@@ -13,8 +13,8 @@ const Article = ({ title, author, source, image, content, url, publishedAt, twit
     }catch(err){
     }
     return (
-        <div>
-            <Card border="info" style={{margin: '2em' }}>
+        <div class="col-sm ">
+            <Card border="info" style={{margin: '2em' }} className="shadow-lg rounded pb-5">
                 <Card.Header>{title}</Card.Header>
                 <Card.Img variant="top" src={image} alt="" width="300vh" />
                 <Card.Body>

@@ -66,16 +66,19 @@ function App() {
 
   return (
     <div className="App">
-      <img src={logo} height="50" className="justify-content-left" ></img>
+      <div class=" sticky-top bg-white pb-3 pt-3">
+         <img src={logo} height="50" className="justify-content-left" ></img>
+      </div>
+     
       <h1> Company Article Knowledge Base</h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar shadow-lg rounded" value={search} onChange={updateSearch} />
-        <Button className="search-button" type="submit" >Search</Button>
+        <Button className="search-button rounded" type="submit" >Search</Button>
       </form>
 
       <div class="container">
         <div class="row">
-          <div class="col-sm">
+          <div>
             {articles.map(article => (
               <Article
                 title={article.title}
