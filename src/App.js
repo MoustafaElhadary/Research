@@ -5,19 +5,22 @@ import NewsAPI from 'newsapi';
 import Snovio from 'snovio';
 import Article from './Article';
 import logo from './Logo.png';
-import extractDomain from 'extract-domain';
+// import extractDomain from 'extract-domain';
 import jsonResponse from './DB/Db';
 
 
 function App() {
 
   const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY || "REACT_APP_NEWS_API_KEY");
-  const snovio = Snovio(process.env.REACT_APP_SNOVIO_UID || "REACT_APP_SNOVIO_UID", process.env.REACT_APP_SNOVIO_SECRET || "REACT_APP_SNOVIO_SECRET");
 
-  const human = require('humanparser');
+  // const snovio = Snovio(process.env.REACT_APP_SNOVIO_UID || "REACT_APP_SNOVIO_UID", process.env.REACT_APP_SNOVIO_SECRET || "REACT_APP_SNOVIO_SECRET");
+  // const human = require('humanparser');
+
   const contacts = [...jsonResponse];
 
+  //DEclaring states and intializing them
   const [articles, setArticles] = useState([]);
+  const [total, setTotal] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('WeWork');
 
@@ -29,28 +32,31 @@ function App() {
     newsapi.v2.everything({
       q: query,
       sortBy: 'relevancy',
-      language:'en',
+      language: 'en',
       pageSize: 100,
     }).then(response => {
 
-      var articles = response.articles.filter(article => article.title.toLowerCase().includes("wework") && article.author != null).map(function (article) {
+      var articles = response.articles.filter(article => article.title.toLowerCase().includes(search) && article.author != null).map(function (article) {
 
-        const parsed = human.parseName(article.author != null ? article.author : '');
-        const domain = extractDomain(article.url);
+        //TODO: This will be implemented later when searching by author is implemented
+        // const parsed = human.parseName(article.author != null ? article.author : '');
+        // const domain = extractDomain(article.url);
+
         const contact = contacts.find(contact => article.author.includes(contact.Name));
 
         return {
           ...article,
           "paper": article.source.name,
-          "domain": domain,
-          "firstName": parsed.firstName,
-          "lastName": parsed.lastName,
+          // "domain": domain,
+          // "firstName": parsed.firstName,
+          // "lastName": parsed.lastName,
           "email": contact != null ? contact.Email : "",
           "twitter": contact != null ? contact.Twitter : ""
         }
       });
       console.log(articles);
       setArticles(articles);
+      setTotal([response.totalResults,contacts.length]);
     });
   }
 
@@ -66,10 +72,23 @@ function App() {
 
   return (
     <div className="App">
-      <div class=" sticky-top bg-white pb-3 pt-3">
-         <img src={logo} height="50" className="justify-content-left" ></img>
+      <div class="container sticky-top">
+        <div class="row bg-white pb-3 pt-3">
+          <div class="col-6 ">
+            <img src={logo} height="50" className="justify-content-left" />
+          </div>
+          <div class="col justify-content-right">
+            <div class="row">
+              <span>{total[0]} articles on {query}</span>
+            </div>
+            <div class="row">
+              <span>{total[1] * 4} articles on {query}</span>
+            </div>
+          </div>
+        </div>
       </div>
-     
+
+
       <h1> Company Article Knowledge Base</h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar shadow-lg rounded" value={search} onChange={updateSearch} />
