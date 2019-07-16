@@ -29,14 +29,15 @@ function App() {
     newsapi.v2.everything({
       q: query,
       sortBy: 'relevancy',
+      language:'en',
       pageSize: 100,
     }).then(response => {
 
-      var articles = response.articles.filter(article => !article.title.includes("vending")).map(function (article) {
+      var articles = response.articles.filter(article => article.title.toLowerCase().includes("wework") && article.author !=null).map(function (article) {
 
         const parsed = human.parseName(article.author != null ? article.author : '');
         const domain = extractDomain(article.url);
-        const contact = contacts.find(contact => contact.Name === article.author);
+        const contact = contacts.find(contact =>  article.author.includes(contact.Name));
 
         const result = {
           ...article,
