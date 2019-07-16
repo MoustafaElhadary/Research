@@ -227,7 +227,95 @@ const jsonResponse = [
       "Company": "TechCrunch",
       "Email": "arman.tabatabai@techcrunch.com",
       "Twitter": "armantabatabai",
-    }
+    },
+    {
+      "Name": "Shana Lebowitz",
+      "Company": "BusinessInsider",
+      "Email": "slebowitz@businessinsider.com",
+      "Twitter": "",
+    },
+    {
+      "Name": "Stephen Netto",
+      "Company": "theonlinecitizen",
+      "Email": "stephennetto@theonlinecitizen.com",
+      "Twitter": "tocsg",
+    },
+    {
+      "Name": "Chris Stokel-Walker",
+      "Company": "Wired",
+      "Email": "walkerchris@wired.co.uk",
+      "Twitter": "stokel",
+    },
+    {
+      "Name": "Janice Gassam",
+      "Company": "Forbes",
+      "Email": "jgassam@forbes.com",
+      "Twitter": "drjanicegassam",
+    },
+
+    {
+      "Name": "Taylor Soper",
+      "Company": "GeekWire",
+      "Email": "taylor@geekwire.com",
+      "Twitter": "Taylor_Soper",
+    },
+
+    {
+      "Name": "Tips @ Geekwire",
+      "Company": "Geekwire",
+      "Email": "tips@geekwire.com",
+      "Twitter": "",
+    },
+    {
+      "Name": "Kate Clark",
+      "Company": "TechCrunch",
+      "Email": "clark.kate@techcrunch.com",
+      "Twitter": "kateclarktweets",
+    },
+    {
+      "Name": "Miguel Cordon",
+      "Company": "techinasia",
+      "Email": "miguel@techinasia.com",
+    },
+    {
+      "Name": "Benji Stawski",
+      "Company": "Thepointsguy",
+      "Email": "b.stawski@thepointsguy.com",
+      "Twitter": "Thepointsguy",
+    },
+    {
+      "Name": "Meghan Morris",
+      "Company": "businessinsider",
+      "Email": "MMorris@businessinsider.com",
+      "Twitter": "MeghanEMorris",
+    },
+
+    {
+      "Name": "Christopher Rim",
+      "Company": "forbes",
+      "Email": "crim@forbes.com",
+      "Twitter": "christopherrim",
+    },
+    {
+      "Name": "phillip torrone",
+      "Company": "Adafruit",
+      "Email": "PT@Adafruit.com",
+      "Twitter": "Adafruit",
+    },
+    {
+      "Name": "Reuters",
+      "Company": "reuters",
+      "Email": "joshua.franklin@reuters.com",
+      "Twitter": "reutersjf",
+    },
+    // {
+    //   "Name": "",
+    //   "Company": "",
+    //   "Email": "",
+    //   "Twitter": "",
+    // },
+
+
   ];
 
   export default jsonResponse;
